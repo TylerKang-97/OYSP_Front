@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import {useEffect, useState} from "react";
+import { Axios } from 'axios';
+import AxiosTest from './api/AxiosTest';
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
        <p>
          {message}
        </p>
+       <AxiosTest/>
       </header>
     </div>
   );
