@@ -3,11 +3,9 @@ import axios from "axios";
 
 const AxiosTest = () => {
     const dataPost = () => {
-        axios.post("/api/post/test", {
-            userName: "tyler",
-            userCollege: "mjc",
-            subjectName: "Web Programming",
-            credit: 3
+        axios.post("/api/post/serviceTest", {
+            subjectName: "OS",
+            credit: 2
         }).then(res => {
             console.log("post success", res);
         }).catch(error => {

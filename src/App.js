@@ -3,6 +3,13 @@ import './App.css';
 import {useEffect, useState} from "react";
 import { Axios } from 'axios';
 import AxiosTest from './api/AxiosTest';
+import UserInfo from './component/UserInfo';
+import Home from './component/Home';
+import { Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SignUp from './component/SignUp';
+import Login from './component/Login';
+
 
 function App() {
 
@@ -14,14 +21,18 @@ function App() {
     });
   }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-       <p>
-         {message}
-       </p>
-       <AxiosTest/>
-      </header>
+    <div>
+      <BrowserRouter>
+            <div>
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/userInfo' element={<UserInfo/>} />
+                    <Route path='/axios' element={<AxiosTest/>} />
+                    <Route path='/signup' element={<SignUp/>} />
+                    <Route path='/login' element={<Login/>} />
+                </Routes>
+            </div>
+        </BrowserRouter>
     </div>
   );
 }
